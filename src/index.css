@@ -1,0 +1,134 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  background: rgb(114, 13, 236);
+  background: linear-gradient(176deg, rgba(114, 13, 236, 1) 0%, rgba(224, 19, 233, 1) 100%);
+  color: white;
+  font-family: monospace;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 2em);
+  width: calc(100vw - 2em);
+  max-width: calc(100vw - 2em);
+  max-height: calc(100vh - 2em);
+  overflow: hidden;
+}
+
+.image-row {
+  flex: 0 0 66%;
+}
+
+.image-row img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.title-row {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1em;
+  overflow: auto;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.button-row {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+}
+
+.button-row button {
+  width: 90%;
+  padding: 0.5em 1em;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: 0.3s, background-color 0.2s ease;
+}
+
+.button-row button:hover {
+  background: rgba(243, 130, 249, 0.2);
+  transform: translateY(-4px);
+}
+
+.button-row button:active {
+  background: rgba(243, 130, 249, 0.4);
+  transform: translateY(4px);
+}
+
+.button-row button a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.connectBtn {
+  font-size: 1.5em;
+}
+
+.navBtn {
+  margin: 0.25em;
+  font-size: 1em;
+}
+
+.components {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #3498db;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+@media (min-width: 768px) {
+  .image-row img {
+    max-height: 66vh;
+  }
+}
